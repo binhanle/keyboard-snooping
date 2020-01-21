@@ -5,7 +5,7 @@ filename: index
 ---
 
 # Keyboard Snooping from Audio and Accelerometer Data
-UCLA ECE M202A Project, Fall 2019
+UCLA ECE 209AS Project, Winter 2020
 
 ## Table of Contents
 * [Authors](#authors)
