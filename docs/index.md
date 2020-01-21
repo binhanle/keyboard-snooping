@@ -1,3 +1,9 @@
+---
+title: Introduction
+layout: template
+filename: index
+---
+
 # Keyboard Snooping from Audio and Accelerometer Data
 UCLA ECE M202A Project, Fall 2019
 
