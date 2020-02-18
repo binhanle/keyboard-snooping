@@ -38,6 +38,32 @@ The problem of keyboard acoustic emanations has shown the possibility of figurin
 - Typing style only affects accuracy slightly
 - PC more vulnerable than notebook, but less than phone and ATM pads
 
+### Don't Skype & Type! Acoustic Eavesdropping in Voice-Over-IP [5]
+#### Objective
+- Identify random keystrokes over Skype, given typing style and keyboard model
+
+#### Method
+- Consider different attack scenarios
+    - Complete profiling
+    - User profiling
+    - Model profiling
+- Record Skype output
+- Perform data segmentation to isolate key sounds
+- Use MFCC to extract audio features
+- Use k-NN classifier to infer target device
+- Use LR classifier to identify keystrokes
+- Collect data from users
+    - Hunt and Peck, Touch typing styles
+
+#### Results
+- 91.7% top-5 accuracy
+- \> 90% accuracy when sample length > 20ms
+- Better accuracy on higher-quality models such as MacBook Pro
+- In model profiling scenario, 60% keystroke accuracy after 10 guesses
+    - Still better than random guessing
+- Good performance with voice to keystroke ratio < 0dB
+- 10<sup>7</sup> fewer tries needed to crack 10-letter password than brute force
+
 ## References
 [1] D. Asonov and R. Agrawal, “Keyboard acoustic emanations,” in IEEE Symposium  on  Security  and  Privacy,  2004.  Proceedings. 2004.    IEEE, 2004, pp. 3–11.
 
