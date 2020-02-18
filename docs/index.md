@@ -15,9 +15,28 @@ UCLA ECE 209AS Project, Winter 2020
 ## Authors
 - An Le
 - Caton Zhong
+- Eugene Chu
 
 ## Abstract
 The problem of keyboard acoustic emanations has shown the possibility of figuring out what a user is typing through keystroke sounds. On the other hand, with the popularity of wearable devices like Apple Watch and Samsung Galaxy Watch, more attack vectors might be exploited. In this project, we present and explore a keyboard snooping attack that utilizes keystroke sounds and accelerometer data collected from compromised wearable devices and mobile phones to determine what a user is typing.
+
+## Literature Review
+### Keyboard Acoustic Emanations (2004) [1]
+#### Objective
+- Show it is possible to eavesdrop different types of keyboards and keypads via acoustic emanations
+
+#### Method
+- Use microphone to record sound of each key
+- Extract touch peak from audio and perform FFT
+- Train NN classifier on key-feature pairs to identify keys
+- Repeat for other types of keyboards and various distances
+
+#### Results
+- 79% accuracy for {a-z, ';', ',', '.', '/'}
+- Accuracy not significantly affected up to 15m
+- Degraded accuracy when attacking keyboard using NN trained on another keyboard
+- Typing style only affects accuracy slightly
+- PC more vulnerable than notebook, but less than phone and ATM pads
 
 ## References
 [1] D. Asonov and R. Agrawal, “Keyboard acoustic emanations,” in IEEE Symposium  on  Security  and  Privacy,  2004.  Proceedings. 2004.    IEEE, 2004, pp. 3–11.
