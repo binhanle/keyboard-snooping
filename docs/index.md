@@ -167,7 +167,7 @@ We wrote a python program to used the built-in microphone of Macbook Pro to cont
 
 ### 5.1. Displacement Information Extraction
 
-Through [Task 1](), we could identity keys from audio data. However, we want to make the prediction more accurate by adding motion sensor data. 
+Through [Task 1](#task-1), we could identity keys from audio data. However, we want to make the prediction more accurate by adding motion sensor data. 
 
 Motion sensor data provide information of the movement of the user's (left) hand. So, we want to get the displacement information. There are multiple approaches.
 
