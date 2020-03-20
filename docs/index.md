@@ -28,7 +28,7 @@ filename: index
 
 ## Abstract
 
-The problem of keyboard acoustic emanations has shown the possibility of figuring out what a user is typing through keystroke sounds. On the other hand, with the popularity of wearable devices like Apple Watch and Samsung Galaxy Watch, more attack vectors might be exploited. In this project, we present and explore a keyboard snooping attack that utilizes keystroke sounds and motion sensor data collected from compromised mobile phones and wearable devices to determine what a user is typing.
+The problem of keyboard acoustic emanations has shown the possibility of figuring out what a user is typing through keystroke sounds. On the other hand, with the popularity of wearable devices like Apple Watch and Samsung Galaxy Watch, more attack vectors might be exploited. In this project, we present and explore a keyboard snooping attack that utilizes keystroke sounds and motion sensor data collected from compromised mobile phones and wearable devices to determine what a user is typing, as well as their intended task.
 
 ## 1. Introduction
 
@@ -99,6 +99,19 @@ The specific aims of this project include three tasks:
     - Still better than random guessing
 - Good performance with a voice to keystroke ratio < 0dB
 - 10<sup>7</sup> fewer tries needed to crack 10-letter password than brute force
+
+### 2.3. A Comprehensive Study of Activity Recognition Using Accelerometers <sup>[8]</sup>
+#### 2.3.1 Objective
+- The paper surveys and evaluates methods of activity recognition using accelerometers.
+#### 2.3.2 Method
+- Using three publicly available data-sets, the paper answers some open questions in literature:
+    - Structured vs “independently and identically distributed" models?
+    - Are the so-far approaches genuinely robust across different contexts and activities? 
+    - What is the minimum sampling rate required to get good classification performance?
+#### 2.3.3 Results
+    - Incorporating lower sampling frequencies does not worsen classification performance.
+    - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
+    - Structured models capture a greater portion of temporal context.
 
 ## 3. Technical Approaches
 
@@ -180,6 +193,8 @@ Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as
 
 ## 6. Task 3: Identify Typing Scenarios
 
+
+
 ## 7. Evaluation
 
 ### 7.1. Success Metrics
@@ -233,3 +248,5 @@ Some possible future directions:
 [6] K.  Jin,  S.  Fang,  C.  Peng,  Z.  Teng,  X.  Mao,  L.  Zhang,  and X.  Li,  “Vivisnoop:  Someone is snooping your typing without seeing it!” in 2017 IEEE Conference on Communications and Network Security (CNS).    IEEE, 2017, pp. 1–9.
 
 [7] T.  Giallanza,  T.  Siems,  E.  Smith,  E.  Gabrielsen,  I.  Johnson, M. A. Thornton, and E. C. Larson, “Keyboard snooping from mobile phone arrays with mixed convolutional and recurrent neural networks,” Proceedings of the  ACM  on  Interactive, Mobile, Wearable and Ubiquitous Technologies, vol. 3, no. 2, pp. 1–22, 2019.
+
+[8] Twomey, Niall & Diethe, Tom & Fafoutis, Xenofon & Elsts, Atis & McConville, Ryan & Flach, Peter & Craddock, I.J.. (2018). A Comprehensive Study of Activity Recognition using Accelerometers. 10.20944/preprints201803.0147.v1. 
