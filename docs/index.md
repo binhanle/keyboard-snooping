@@ -18,14 +18,14 @@ filename: index
 ## Table of Contents
 
 * [Abstract](#abstract)
-* [Introduction](#introduction)
-* [Literature Review](#literature-review)
-* [Technical Approaches](#technical-approaches)
-* [Task 1: Identify Single KeysTechnical Approaches](#task-1)
-* [Task 2: Identify 6-Digit PINs](#task-2)
-* [Task 3: Identify Typing Scenarios](#task-3)
-* [Evaluation](#evaluation)
-* [Contributions](#contributions)
+* [1. Introduction](#introduction)
+* [2. Literature Review](#literature-review)
+* [3. Technical Approaches](#technical-approaches)
+* [4. Task 1: Identify Single KeysTechnical Approaches](#task-1)
+* [5. Task 2: Identify 6-Digit PINs](#task-2)
+* [6. Task 3: Identify Typing Scenarios](#task-3)
+* [7. Evaluation](#evaluation)
+* [8. Contributions](#contributions)
 * [References](#references)
 
 ## Abstract
