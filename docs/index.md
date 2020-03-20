@@ -42,9 +42,10 @@ The problem of keyboard acoustic emanations has shown the possibility of figurin
 
 The overall project goals of this project include:
 
-1. To implement some of the keyboard snooping attacks that use audio data only.
-2. To explore which motion sensor(s) best suit the keyboard snooping attack.
-3. To try different ways of sensor fusion for microphone and motion sensor(s) and get quantified results.
+1. To implement some of the keyboard snooping attacks that use audio data only
+2. To explore which motion sensor(s) best suit the keyboard snooping attack
+3. To try different ways of sensor fusion of microphone and motion sensor(s)
+4. To simulate multiple keyboard snooping attacks using sensor fusion
 
 #### 1.1.2. Specific Aims
 
@@ -53,6 +54,7 @@ The specific aims of this project include three tasks:
 1. To build an audio-only model which identifies single keys ([Task 1](#task-1))
 2. To build a sensor fusion model which identifies 6-digit PINs ([Task 2](#task-2))
 3. To build a sensor fusion model which identifies different kinds of typing scenarios (like emailing, gaming, and chatting) ([Task 3](#task-3))
+4. To test these models and perform quantitative evaluations
 
 <h2 id="literature-review">
 2. Literature Review
