@@ -50,9 +50,9 @@ The overall project goals of this project include:
 
 The specific aims of this project include three tasks:
 
-1. To build an audio-only model which identifies single keys (Task 1)
-2. To build a sensor fusion model which identifies 6-digit PINs (Task 2)
-3. To build a sensor fusion model which identifies different kinds of typing scenarios (like emailing, gaming, and chatting) (Task 3)
+1. To build an audio-only model which identifies single keys ([Task 1](#task-1))
+2. To build a sensor fusion model which identifies 6-digit PINs ([Task 2](#task-2))
+3. To build a sensor fusion model which identifies different kinds of typing scenarios (like emailing, gaming, and chatting) ([Task 3](#task-3))
 
 <h2 id="literature-review">
 2. Literature Review
