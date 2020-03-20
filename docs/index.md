@@ -8,11 +8,11 @@ filename: index
 
 *UCLA ECE 209AS Project, Winter 2020*
 
-|	  Authors		|
-| -------------- |
+|	Authors		|
+| ---------------------	|
 | An Le			|
 | Eugene Chu		|
-| Zixuan Zhong	|		
+| Zixuan Zhong		|		
 
 
 ## Table of Contents
@@ -155,6 +155,10 @@ We wrote a python program to used the built-in microphone of Macbook Pro to cont
 4. Task 1: Identify Single Keys
 </h2>
 
+### 4.1. Recording and Keylogging
+
+### 4.2. Machine Learning and Result
+
 <h2 id="task-2">
 5. Task 2: Identify 6-Digit PINs
 </h2>
@@ -172,7 +176,7 @@ Most sensor data produced by the phone are 3-dimensional and in the device's fra
 
 Even though we do not care that much about the sampling rate. The displacement calculation, double integration, also result in a large error. At the same time, transferring a sequence of data into a single value means we have to lose details.
 
-So, manually extracting displacement data is not feasible. We directly put all raw into the machine learning model for training and testing.
+So, manually extracting displacement data is not feasible. We directly put all raw data into the machine learning model for training and testing.
 
 ### 5.2. Motion Sensor Selection
 
