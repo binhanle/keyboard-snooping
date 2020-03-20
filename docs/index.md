@@ -137,17 +137,17 @@ The specific aims of this project include three tasks:
 
 To process (lossless) audio data, we first read the wave data and extract the peaks which are generated at the moment the user's finger touches the keys. Second, we perform a Fast Fourier Transform (FFT) on every sample that contains only about 25-milliseconds-long wave data to get wave data in the frequency domain. Finally, the frequency-domain audio data are put into a neural network classifier for training.
 
-To add motion sensor data, many things need to be considered. First, it is intuitive that we want the displacement information from the motion sensor data, should we extract the displacement from raw data manually or directly put raw data into neural networks? There are multiple kinds of motion sensors, including accelerometer, gravimeter, or gyroscope sensors, which one(s) should we use? To find the answers to those questions, we conducted a lot of experiments during the implementation of Task 2 and results will be discussed in the section for Task 2.
+To add motion sensor data, many things need to be considered. First, it is intuitive that we want the displacement information from the motion sensor data, should we extract the displacement from raw data manually or directly put raw data into neural networks? There are multiple kinds of motion sensors, including accelerometer, gravimeter, or gyroscope sensors, which one(s) should we use? To find the answers to those questions, we conducted a lot of experiments during the implementation of [Task 2](#task-2) and results will be discussed in the section for [Task 2](#task-2).
 
-In terms of sensor fusion, there are also multiple ways. For example, we could build a model which accepts both audio data and motion sensor data, or we may train two separate models, one only for audio data and the other only for motion sensor data, and perform Maximum Likelihood Tree Search (MLTS) to compute the final predictions based on the results from the two models. We could not know which method might give better results at the beginning of the project so both methods were tried and their results will be discussed in the section for Task 2.
+In terms of sensor fusion, there are also multiple ways. For example, we could build a model which accepts both audio data and motion sensor data, or we may train two separate models, one only for audio data and the other only for motion sensor data, and perform Maximum Likelihood Tree Search (MLTS) to compute the final predictions based on the results from the two models. We could not know which method might give better results at the beginning of the project so both methods were tried and their results will be discussed in the section for [Task 2](#task-2).
 
 ### 3.2. Datasets
 
-For Task 1, the dataset contains more than 4,000 samples, each of which is for a single key and has an audio wave file.
+For [Task 1](#task-1), the dataset contains more than 4,000 samples, each of which is for a single key and has an audio wave file.
 
-For Task 2, the dataset contains more than 4,00 samples, each of which is for a 6-digit PIN and has an audio file and five motion data files (there are 5 intervals between 6 peaks).
+For [Task 2](#task-2), the dataset contains more than 4,00 samples, each of which is for a 6-digit PIN and has an audio file and five motion data files (there are 5 intervals between 6 peaks).
 
-For Task 3, the dataset contains about 90 samples, each of which contains a 30 seconds long audio file and corresponding motion sensor data.
+For [Task 3](#task-3), the dataset contains about 90 samples, each of which contains a 30 seconds long audio file and corresponding motion sensor data.
 
 ### 3.3. Platforms
 
@@ -167,7 +167,7 @@ We wrote a python program to used the built-in microphone of Macbook Pro to cont
 
 ### 5.1. Displacement Information Extraction
 
-Through Task 1, we could identity keys from audio data. However, we want to make the prediction more accurate by adding motion sensor data. 
+Through [Task 1](), we could identity keys from audio data. However, we want to make the prediction more accurate by adding motion sensor data. 
 
 Motion sensor data provide information of the movement of the user's (left) hand. So, we want to get the displacement information. There are multiple approaches.
 
