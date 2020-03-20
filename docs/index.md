@@ -145,7 +145,7 @@ In terms of sensor fusion, there are also multiple ways. For example, we could b
 
 For [Task 1](#task-1), the dataset contains more than 4,000 samples, each of which is for a single key and has an audio wave file.
 
-For [Task 2](#task-2), the dataset contains more than 4,00 samples, each of which is for a 6-digit PIN and has an audio file and five motion data files (there are 5 intervals between 6 peaks).
+For [Task 2](#task-2), the dataset contains more than 700 samples, each of which is for a 6-digit PIN and has an audio file and five motion data files (there are 5 intervals between 6 peaks).
 
 For [Task 3](#task-3), the dataset contains about 90 samples, each of which contains a 30 seconds long audio file and corresponding motion sensor data.
 
