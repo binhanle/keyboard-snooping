@@ -109,9 +109,9 @@ The specific aims of this project include three tasks:
     - Are the so-far approaches genuinely robust across different contexts and activities? 
     - What is the minimum sampling rate required to get good classification performance?
 #### 2.3.3 Results
-    - Incorporating lower sampling frequencies does not worsen classification performance.
-    - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
-    - Structured models capture a greater portion of temporal context.
+   - Incorporating lower sampling frequencies does not worsen classification performance.
+   - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
+   - Structured models capture a greater portion of temporal context.
 
 ## 3. Technical Approaches
 
