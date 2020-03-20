@@ -18,19 +18,23 @@ filename: index
 ## Table of Contents
 
 * [Abstract](#abstract)
-* [Introduction](#1.-introduction)
-* [Literature Review](#2.-literature-review)
-* [Technical Approaches](#3.-technical-approaches)
-* [Task 1: Identify Single KeysTechnical Approaches](#4.-task-1:-identify-single-keys)
-* [Task 2: Identify 6-Digit PINs](#5.-task-2:-identify-6-digit-PINs)
-* [Task 3: Identify Typing Scenarios](#6.-Task-3:-Identify-Typing-Scenarios)
+* [Introduction](#introduction)
+* [Literature Review](#literature-review)
+* [Technical Approaches](#technical-approaches)
+* [Task 1: Identify Single KeysTechnical Approaches](#task-1)
+* [Task 2: Identify 6-Digit PINs](#task-2)
+* [Task 3: Identify Typing Scenarios](#task-3)
+* [Evaluation](#evaluation)
+* [Contributions](#contributions)
 * [References](#references)
 
 ## Abstract
 
 The problem of keyboard acoustic emanations has shown the possibility of figuring out what a user is typing through keystroke sounds. On the other hand, with the popularity of wearable devices like Apple Watch and Samsung Galaxy Watch, more attack vectors might be exploited. In this project, we present and explore a keyboard snooping attack that utilizes keystroke sounds and motion sensor data collected from compromised mobile phones and wearable devices to determine what a user is typing, as well as their intended task.
 
-## 1. Introduction
+<h2 id="introduction">
+1. Introduction
+</h2>
 
 ### 1.1. Goals and Aims
 
@@ -50,8 +54,12 @@ The specific aims of this project include three tasks:
 2. To build a sensor fusion model which identifies 6-digit PINs (Task 2)
 3. To build a sensor fusion model which identifies different kinds of typing scenarios (like emailing, gaming, and chatting) (Task 3)
 
-## 2. Literature Review
+<h2 id="literature-review">
+2. Literature Review
+</h2>
+
 ### 2.1. Keyboard Acoustic Emanations (2004) <sup>[1]</sup>
+
 #### 2.1.1. Objective
 
 - Show it is possible to eavesdrop different types of keyboards and keypads via acoustic emanations
@@ -72,6 +80,7 @@ The specific aims of this project include three tasks:
 - PC more vulnerable than a notebook, but less than a phone and ATM pads
 
 ### 2.2. Don't Skype & Type! Acoustic Eavesdropping in Voice-Over-IP <sup>[5]</sup>
+
 #### 2.2.1. Objective
 
 - Identify random keystrokes over Skype, given typing style and keyboard model
@@ -118,7 +127,9 @@ The specific aims of this project include three tasks:
    - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
    - Structured models capture a greater portion of temporal context.
 
-## 3. Technical Approaches
+<h2 id="technical-approaches">
+3. Technical Approaches
+</h2>
 
 ### 3.1. Algorithms
 
@@ -140,9 +151,13 @@ For Task 3, the dataset contains about 90 samples, each of which contains a 30 s
 
 We wrote a python program to used the built-in microphone of Macbook Pro to control the audio recording. To collect motion sensor data, an Android app called "Physical Toolbox Suite" meets all of our needs and we put an Android phone on our wrist to simulate a smartwatch. The platform we used for machine learning is Keras. 
 
-## 4. Task 1: Identify Single Keys
+<h2 id="task-1">
+4. Task 1: Identify Single Keys
+</h2>
 
-## 5. Task 2: Identify 6-Digit PINs
+<h2 id="task-2">
+5. Task 2: Identify 6-Digit PINs
+</h2>
 
 ### 5.1. Displacement Information Extraction
 
@@ -196,11 +211,14 @@ Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as
 
 ### 5.4. Machine Learning and Result
 
-## 6. Task 3: Identify Typing Scenarios
+<h2 id="task-3">
+6. Task 3: Identify Typing Scenarios
+</h2>
 
 
-
-## 7. Evaluation
+<h2 id="evaluation">
+7. Evaluation
+</h2>
 
 ### 7.1. Success Metrics
 
@@ -230,7 +248,9 @@ Some possible future directions:
 2. To collect data samples from different hardware devices
 3. To identity the user's emotion while typing using motion sensor and microphone
 
-## 8. Contributions
+<h2 id="contributions">
+8. Contributions
+</h2>
 
 | Name 		| Contributions 			|
 | ----------	| -----------------------	|
