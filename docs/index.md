@@ -201,6 +201,10 @@ We wrote a python script that saves both key strokes as well as the audio inform
 
 To preprocess the audio, we first trim off 0.1 sec off both ends to remove any stray enter keys. Next, we set a magnitude threshold and enforce a minimum time between keystrokes to extract the push peaks and exclude the softer release peaks. Then, for each peak, we extract audio samples from 5 ms before the peak to 20 ms after the peak. For feature extraction, we apply FFT on 20 ms sliding windows with a stride of 1 ms. Finally, we standardize all of the features.
 
+![](./resources/4.2.png)
+
+*Finding 6 peaks from an audio data sample*
+
 ### 4.3. Key Classifier Architecture
 
 Our key classifier is an MLP with two fully-connected hidden layers of size 64, a 50% dropout layer, and a softmax layer of size 36, which covers the keys `a-z` and `0-9`. The loss function for this model is categorical cross-entropy.
@@ -262,6 +266,10 @@ Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as
 ### 5.5. Preprocessing
 
 For audio preprocessing, we apply the same steps as in Task 1. For accelerometer preprocessing, we first obtain five accelerometer segments between the push peaks. At first, we attempted to take the FFT of the segments but failed to attain a good accuracy. We believe the reason is the FFT fails to distinguish between opposite hand motions, which are reflected as flipped accelerometer signals in time domain and signals of identical magnitude in frequency domain. Instead, we fix the length of the accelerometer signals to 256 by resampling them.
+
+![](./resources/5.5.png)
+
+*An accelerometer segment*
 
 ### 5.6. Key Model and Displacement Estimator Architecture
 
