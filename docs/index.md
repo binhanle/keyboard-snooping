@@ -273,7 +273,7 @@ This time, we train two models: a key classifier and a displacement estimator. W
 
 ### 5.7. Training and Result
 
-We recorded a new dataset consisting of keystroke audio and accelerator data from two subjects on two different USB keyboards placed next to the same MacBook hosting the recording script. We have 718 PINs of length 6. As before, we apply a 70% training, 15% validation, and 15% test split. Applying the same training conditions as Task 1, we obtain a keystroke accuracy of *84.1%* and a top-3 accuracy of *95.1%*. The displacement model has an accuracy of *80.8%* after rounding the output, and a loss of *0.172*.
+We recorded a new dataset consisting of keystroke audio and accelerator data from two subjects on two different USB keyboards placed next to the same MacBook hosting the recording script. We have 718 PINs of length 6. As before, we apply a 70% training, 15% validation, and 15% test split. Applying the same training conditions as Task 1, we obtain a keystroke accuracy of **84.1%** and a top-3 accuracy of **95.1%**. The displacement model has an accuracy of **80.8%** after rounding the output, and a loss of **0.172**.
 
 ### 5.8. Maximum Likelihood Tree Search (MLTS)
 
