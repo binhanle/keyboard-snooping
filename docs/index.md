@@ -319,7 +319,7 @@ Now we test both models and MLTS on a new dataset that was recorded by a third p
 </h2>
 
 ### 6.1. Sensor hardware and software
-In this task we collect sensor fusion data from three user tasks (gaming, messaging, emailing) for classification. The sensors used are the microphone on a Macbook Pro 2017 and the Physical Toolbox Suite application on an Android phone. Furthermore, we have also applied the steps within [Section 5.3.](#53-synchronization) for synchronizing the audio waveform and the acceleration data. Each sample is labeled with one-hot labeling of 3 classes. 
+In this task we collect sensor fusion data from three user tasks (gaming, messaging, emailing) for classification. The sensors used are the microphone on a Macbook Pro 2017 and the Physical Toolbox Suite application on an Android phone. Furthermore, we have also applied the steps within Section 5.3. for synchronizing the audio waveform and the acceleration data. Each sample is labeled with one-hot labeling of 3 classes. 
 
 ### 6.2. Preprocessing and Architecture
 Compared to Task 2, which focuses on information around keypresses, task 3 requires the entire 30 second data as input. Thus, the acceleration and audio information contains too much information to directly input into machine learning models as a feature space. Therefore, we implement preprocessing on both datasets to reduce feature size:
