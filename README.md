@@ -10,4 +10,4 @@
 
 - Website URL: https://binhanle.github.io/keyboard-snooping/
 - Slides (PDF): [docs/slides.pdf](https://binhanle.github.io/keyboard-snooping/slides.pdf)
-\alpha
+
