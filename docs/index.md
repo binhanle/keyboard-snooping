@@ -299,20 +299,20 @@ where:
 Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of ![10^6](https://render.githubusercontent.com/render/math?math=10%5E6) or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
 
 ```psuedocode
-Set best guess to most probable 6-key PIN according to key classifier
-Set max LL to LL of best guess
-Add [0], [1], ... [9] to subguess stack
-While stack is not empty:
-	Pop subguess from stack
-	Find LL of subguess
-	If current LL <= max LL then continue
-	If len(subguess) == 6:
-		If current LL > max LL:
-			Set max LL to current LL
-			Set best guess to current subguess
-			Continue
-	For i in 0..9:
-		Push append(subguess, i) to stack
+best guess <-- most probable 6-key PIN according to key classifier
+max LL <-- LL(best guess)
+push [0], [1], ... [9] to subguess stack
+while stack is not empty:
+	pop subguess from stack
+	current LL <-- LL(subguess)
+	if current LL <= max LL then continue
+	if len(subguess) == 6:
+		if current LL > max LL:
+			max LL <-- current LL
+			best guess <-- subguess
+			continue
+	for i from 0 to 9
+		push append(subguess, i) to stack
 ```
 
 MLTS is essentially DFS with log likelihood computations for each node, starting with 1-key subguesses. It keeps track of the best 6-key guess according to its LL. The initial goal is set to the LL of the 6-key guess suggested by the audio-only classifier. If the algorithm encounters a subguess whose LL is less than or equal to the maximum found so far, every subsequent guess starting with the subguess is rejected since we know that adding more subterms never causes the LL to rise.
@@ -362,9 +362,9 @@ Therefore, the chosen features in our preprocessing phase can represent the diff
 7. Evaluation
 </h2>
 
-### 7.1. Success Metrics and Key Findings
+### 7.X. Success Metrics and Key Findings
 
-### 7.4. Prior Work Examples and Relative Novelty
+### 7.Y. Prior Work Examples and Relative Novelty
 
 ### 7.5. Strengths, Weakness, and Future Directions
 
