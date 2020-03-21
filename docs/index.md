@@ -4,6 +4,8 @@ layout: default
 filename: index
 ---
 
+{% include mathjax.html %}
+
 # Keyboard Snooping from Audio and Motion Sensor Data
 
 *UCLA ECE 209AS Project, Winter 2020*
