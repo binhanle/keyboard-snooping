@@ -128,6 +128,46 @@ The specific aims of this project include three tasks:
    - Incorporating lower sampling frequencies does not worsen classification performance.
    - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
    - Structured models capture a greater portion of temporal context.
+   
+### 2.3. Activity classification using a single wrist-worn accelerometer  <sup>[8]</sup>
+
+#### 2.3.1. Objective
+- This paper investigates the use of a single wrist- worn sensor to detect five daily activities.
+
+#### 2.3.2. Method
+
+- The paper compares two models: “Decision Tree C4.5” and “1-layer FC network” for classification of 5 tasks
+      -  sitting, standing, lying, walking, and running
+- Using four different sets of features [time domain], [freq domain]
+     1) [min, dx, dy, dz], [coefficient sum, spectral energy, spectral entropy]
+     2) [mean, std, variance, dx, dy, dz, correlation matirx], [spectral energy, spectral entropy]
+     3) Set 1 + Set 2 with CFS evaluation
+     4) [mean, min, correlation xy, dx, dy], [coefficient sum]
+  
+#### 2.3.3. Results
+
+   - Using *Correlation-based Feature Selection* gives the best accuracy of 94.13% and F-1 score of 0.91.
+   - Although one wrist worn accelerometer can be used to identify activity of a user, only simple activities can be detected.
+   - More complex activities or those that involve detailed hand movements may require other sensors for additional context. 
+
+### 2.4. A Comprehensive Study of Activity Recognition Using Accelerometers <sup>[9]</sup>
+
+#### 2.4.1. Objective
+
+- The paper surveys and evaluates methods of activity recognition using accelerometers.
+
+#### 2.4.2. Method
+
+- Using three publicly available data-sets, the paper answers some open questions in literature:
+    - Structured vs “independently and identically distributed" models?
+    - Are the so-far approaches genuinely robust across different contexts and activities? 
+    - What is the minimum sampling rate required to get good classification performance?
+    
+#### 2.4.3. Results
+
+   - Incorporating lower sampling frequencies does not worsen classification performance.
+   - The use of longer (5-7 secs) feature windows for feature extraction can help the classification.
+   - Structured models capture a greater portion of temporal context.
 
 <h2 id="technical-approaches">
 3. Technical Approaches
@@ -272,6 +312,36 @@ Now we test both models and MLTS on a new dataset that was recorded by a third p
 6. Task 3: Identify Typing Scenarios
 </h2>
 
+### 6.1. Sensor hardware and software
+In this task we collect sensor fusion data from three user tasks (gaming, messaging, emailing) for classification. The sensors used are the microphone on a Macbook Pro 2017 and the Physical Toolbox Suite application on an Android phone. Furthermore, we have also applied the steps within [section 5.1](#5.3.-synchronization) for synchronizing the audio waveform and the acceleration data. Each sample is labeled with one-hot labeling of 3 classes. 
+
+### 6.2. Preprocessing and Architecture
+Compared to Task 2, which focuses on information around keypresses, task 3 requires the entire 30 second data as input. Thus, the acceleration and audio information contains too much information to directly input into machine learning models as a feature space. Therefore, we implement preprocessing on both datasets to reduce feature size:
+
+- Audio: We perform Fourier Transform with window size of 20ms and stride of 1ms, then take the average of the sliding windows. This results in 511 audio features.
+- Accel: Since each sample of accelerometer data contains (x,y,z) vectors, we take the mean and standard deviation of every 300 samples. This results in 120 acceleration features.
+
+The neural network architecture and parameters are as follows:
+- Two FC layers with 16 nodes each, with 0.5 dropout and batchnorm
+- Loss function: categorical cross-entropy
+- Train-val split: 85%-15%
+- Batch size:  10
+- Epochs: 100
+
+### 6.3. Machine Learning and Result
+The results are shown in Figure 1. It can be seen that our model trains and validates with high accuracy, but it may be overfitted. However, we can see from the plot that the first twenty epochs give a drastic decrease in the training loss, which shows that our NN model does in fact learn with our selected features. We believe that the model too easily converges because of the small dataset.
+
+However, intuitively we can give some insights into how the model interprets the features. The three tasks (gaming, messaging, emailing) have slightly different acceleration and audio profiles, as discussed below:
+
+- Task classification is also dependent on the key press intervals (Intuition):
+- Gaming tasks have constant key presses limited to certain keys (little acceleration change)
+- Messaging has multiple keys pressed clustered in short intervals (requires the other person to reply)
+- Emailing tasks are have more constant typing over a longer period (longer sentences)
+
+Therefore, the chosen features in our preprocessing phase can represent the differences between the three tasks. Our audio input, after FFT, should have larger magnitudes for tasks that consist of continuous typing, i.e. gaming and emailing. While the accelerometer data should distinguish between tasks that have a relatively stable hand location (gaming) and those that require more hand movement due to the larger key space (messaging and emailing).
+
+
+
 
 <h2 id="evaluation">
 7. Evaluation
@@ -331,4 +401,6 @@ Some possible future directions:
 
 [7] T.  Giallanza,  T.  Siems,  E.  Smith,  E.  Gabrielsen,  I.  Johnson, M. A. Thornton, and E. C. Larson, “Keyboard snooping from mobile phone arrays with mixed convolutional and recurrent neural networks,” Proceedings of the  ACM  on  Interactive, Mobile, Wearable and Ubiquitous Technologies, vol. 3, no. 2, pp. 1–22, 2019.
 
-[8] Twomey, Niall & Diethe, Tom & Fafoutis, Xenofon & Elsts, Atis & McConville, Ryan & Flach, Peter & Craddock, I.J.. (2018). A Comprehensive Study of Activity Recognition using Accelerometers. 10.20944/preprints201803.0147.v1. 
+[8] S. Chernbumroong, A. S. Atkins and H. Yu, "Activity classification using a single wrist-worn accelerometer," 2011 5th International Conference on Software, Knowledge Information, Industrial Management and Applications (SKIMA) Proceedings, Benevento, 2011, pp. 1-6. doi: 10.1109/SKIMA.2011.6089975
+
+[9] Twomey, Niall & Diethe, Tom & Fafoutis, Xenofon & Elsts, Atis & McConville, Ryan & Flach, Peter & Craddock, I.J.. (2018). A Comprehensive Study of Activity Recognition using Accelerometers. 10.20944/preprints201803.0147.v1. 
