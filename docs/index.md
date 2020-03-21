@@ -171,6 +171,8 @@ Our key classifier is an MLP with two fully-connected hidden layers of size 64, 
 
 ### 4.5. Result
 
+The dataset for this task consists of 4807 total keystrokes (a-z, 0-9) recorded by a single person on a MacBook using its internal microphones. We split the dataset into 70% training, 15% validation, and 15% test. We trained our key classifier on an GeForce RTX 2070 GPU for 100 epochs with a batch size of 128 and saved the model with the lowest validation loss. We obtained a keystroke accuracy ranging from *96%* and *98%*. If we train an averaging ensemble of 5 (initialized differently), the accuracy increases to *99%*. Our accuracy vastly exceeds the 79% attained in Keyboard Acoustic Emanations [1] since the authors used a window size of 2 ms instead of 20 ms, resulting in much smaller input features.
+
 <h2 id="task-2">
 5. Task 2: Identify 6-Digit PINs
 </h2>
@@ -235,7 +237,7 @@ For audio preprocessing, we apply the same steps as in Task 1. For accelerometer
 
 How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
 
-<img src="https://latex.codecogs.com/png.latex?\[&space;LL(G)&space;=&space;\sum_{i=1}^{|G|}&space;\log(p(k_i&space;=&space;g_i))&space;-&space;c&space;\sum_{i=2}^{|G|}&space;|d_i&space;-&space;\hat{d_i}|^2\&space;\]" title="\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\ \]" />
+![$LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2$](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
 
 where:
 
@@ -249,10 +251,10 @@ where:
 
 ![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
 
-\\[ \hat{d_i} \\] is the estimate of above
+![\hat{d_i}](https://render.githubusercontent.com/render/math?math=%5Chat%7Bd_i%7D) is the estimate of above
 
 
-Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of \\[ 10^6 \\] or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
+Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of ![10^6](https://render.githubusercontent.com/render/math?math=10%5E6) or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
 
 {algorithm goes here}
 
