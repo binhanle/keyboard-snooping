@@ -220,6 +220,7 @@ Through [Task 1](#task-1), we could identity keys from audio data. However, we w
 Motion sensor data provide information of the movement of the user's (left) hand. So, we want to get the displacement information. There are multiple approaches.
 
 ![](./resources/device_frame.png)
+
 *Diagram showing the coordinate and rotation axes for the phone. ([source](https://developer.apple.com/documentation/coremotion/getting_processed_device-motion_data/understanding_reference_frames_and_device_attitude))*
 
 Most sensor data produced by the phone are 3-dimensional and in the device's frame. In order to get accelerometer data in the world's frame, we need to record both the linear accelerometer data and orientation data simultaneously, which, unfortunately, resulted in a low sampling rate.
