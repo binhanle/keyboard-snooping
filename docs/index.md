@@ -90,9 +90,9 @@ The specific aims of this project include three tasks:
 #### 2.2.2. Method
 
 - Consider different attack scenarios
-    - Complete profiling
-    - User profiling
-    - Model profiling
+    - Complete profiling -- labeled keystroke data available
+    - User profiling -- training data available from other keyboard of same device type
+    - Model profiling -- nothing is known
 - Record Skype output
 - Perform data segmentation to isolate key sounds
 - Use MFCC to extract audio features
