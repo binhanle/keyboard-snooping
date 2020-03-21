@@ -356,6 +356,10 @@ Therefore, the chosen features in our preprocessing phase can represent the diff
 
 ### 7.1. Relative Novelty
 
+#### 7.1.1. Task 2
+
+Many prior works have dealt with recovering text from keyboard acoustic emanations. Later works apply clustering and dictionary models to infer words typed without labeled training data. In our work, we demonstrate that combining key sounds with accelerometer data from wrist movement results in better key predictions than using audio alone, even if the key classifier is poor or a dictionary model is unavailable.
+
 #### 7.1.2. Task 3
 
 From literature review, we see that most task classification with accelerometer data focuses on tasks that require large movement, i.e. they focus on tasks that have either full body movement (walking, swimming, ...), or those with swinging movements (tennis, wii, ...). In our work, we focus on keyboard snooping, which has minimal arm movement. Thus, accelerometer data by itself does not achieve good accuracy; we therefore complement our features with audio information for better results.
