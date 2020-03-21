@@ -215,7 +215,17 @@ Labels of the five accelerometer data are 2-dimensional vectors. First, we encod
 
 Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as (-1, -1), (1, -2), (1, 1), (0, 1), and (-2, 0). So the five accelerometer data files are "0.84.-1.-1.acce.csv", "1.40.1.-2.acce.csv", "2.03.1.1.csv", "3.36.0.1.acce.csv", and "4.64.-2.0.csv".
 
-### 5.4. Machine Learning and Result
+### 5.5. Preprocessing
+
+For audio preprocessing, we apply the same steps as in Task 1. For accelerometer preprocessing, we first obtain five accelerometer segments between the push peaks. At first, we attempted to take the FFT of the segments but failed to attain a good accuracy. We believe the reason is the FFT fails to distinguish between opposite hand motions, which are reflected as flipped accelerometer signals in time domain and signals of identical magnitude in frequency domain. Instead, we fix the length of the accelerometer signals to 256 by resampling them.
+
+### 5.6. Machine Learning and Result
+
+### 5.7. Maximum Likelihood Tree Search (MLTS)
+
+### 5.8. Evaluation after Audio and Accelerometer Fusion
+
+### 5.9. Evaluation on Additional Test Set
 
 <h2 id="task-3">
 6. Task 3: Identify Typing Scenarios
