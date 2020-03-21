@@ -248,18 +248,13 @@ Labels of the audio data are from key logs directly. For example, if the PIN is 
 
 Labels of the five accelerometer data are 2-dimensional vectors. First, we encode each key to a 2D coordinate: 
 
-| key	| 2D coordinate |
-| ---- | ------------- |
-| 0		| (0, 0) |
-| 1		| (-1, 1)|
-| 2		| (0, 1) |
-| 3		| (1, 1) |
-| 4		| (-1, 2)|
-| 5		| (0, 2) |
-| 6		| (1, 2)|
-| 7		| (-1, 3)|
-| 8		| (0, 3)|
-| 9		| (1, 3)|
+| **key**	| 2D coordinate | **key**	| 2D coordinate |
+| ---- | ------------- | ---- | ------------- |
+| 0		| (0, 0) |5		| (0, 2) |
+| 1		| (-1, 1)|6		| (1, 2)|
+| 2		| (0, 1) |7		| (-1, 3)|
+| 3		| (1, 1) |8		| (0, 3)|
+| 4		| (-1, 2)|9		| (1, 3)|
 
 Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as (-1, -1), (1, -2), (1, 1), (0, 1), and (-2, 0). So the five accelerometer data files are "0.84.-1.-1.acce.csv", "1.40.1.-2.acce.csv", "2.03.1.1.csv", "3.36.0.1.acce.csv", and "4.64.-2.0.csv".
 
