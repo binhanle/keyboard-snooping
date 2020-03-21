@@ -282,18 +282,12 @@ How do we improve the PIN guess using the additional accelerometer information? 
 ![equation](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
 
 where:
-
-![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
-
-![K](https://render.githubusercontent.com/render/math?math=K) is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
-
-![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
-
-![c](https://render.githubusercontent.com/render/math?math=c) is the reliability constant of the displacement estimator
-
-![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
-
-![\hat{d_i}](https://render.githubusercontent.com/render/math?math=%5Chat%7Bd_i%7D) is the estimate of above
+- ![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![K](https://render.githubusercontent.com/render/math?math=K) is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
+- ![c](https://render.githubusercontent.com/render/math?math=c) is the reliability constant of the displacement estimator
+- ![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
+- ![\hat{d_i}](https://render.githubusercontent.com/render/math?math=%5Chat%7Bd_i%7D) is the estimate of above
 
 
 Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of ![10^6](https://render.githubusercontent.com/render/math?math=10%5E6) or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
