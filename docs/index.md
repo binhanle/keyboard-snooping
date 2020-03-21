@@ -287,9 +287,15 @@ Then the five key pairs <8,4>, <4, 0>, <0, 3>, <3, 6>, and <6, 4> are labeled as
 
 For audio preprocessing, we apply the same steps as in Task 1. For accelerometer preprocessing, we first obtain five accelerometer segments between the push peaks. At first, we attempted to take the FFT of the segments but failed to attain a good accuracy. We believe the reason is the FFT fails to distinguish between opposite hand motions, which are reflected as flipped accelerometer signals in time domain and signals of identical magnitude in frequency domain. Instead, we fix the length of the accelerometer signals to 256 by resampling them.
 
-### 5.6. Machine Learning and Result
+### 5.6. Key Model and Displacement Estimator Architecture
 
-### 5.7. Maximum Likelihood Tree Search (MLTS)
+This time, we train two models: a key classifier and a displacement estimator. We use the same key classifier as in Task 1 except for the last layer, which has 10 neurons for the numpad keys 0-9. The displacement estimator has the same architecture as the key classifier, except the output layer is linear with 2 outputs representing 2D displacement. The loss function of the latter model is mean squared error.
+
+### 5.7. Training and Result
+
+We recorded a new dataset consisting of keystroke audio and accelerator data from two subjects on two different USB keyboards placed next to the same MacBook hosting the recording script. We have 718 PINs of length 6. As before, we apply a 70% training, 15% validation, and 15% test split. Applying the same training conditions as Task 1, we obtain a keystroke accuracy of *84.1%* and a top-3 accuracy of *95.1%*. The displacement model has an accuracy of *80.8%* after rounding the output, and a loss of *0.172*.
+
+### 5.8. Maximum Likelihood Tree Search (MLTS)
 
 How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
 
