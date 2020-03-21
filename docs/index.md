@@ -223,6 +223,24 @@ For audio preprocessing, we apply the same steps as in Task 1. For accelerometer
 
 ### 5.7. Maximum Likelihood Tree Search (MLTS)
 
+How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
+
+\\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\\ \\]
+
+where:
+- \\[ G \\] is the PIN subguess with \\[ g_i \\] as the \\[ i \\]th key
+- \\[ K \\] is the true PIN with \\[ k_i \\] as the \\[ i \\]th key
+- \\[ p \\] represents the softmax outputs of the key classifier on the \\[ g_i \\]'s
+- \\[ c \\] is the reliability constant of the displacement estimator
+- \\[ d_i \\] is the true displacement from \\[ g_{i - 1} \\] to \\[ g_i \\]
+- \\[ \hat{d_i} \\] is the estimate of above
+
+Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of \\[ 10^6 \\] or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
+
+{algorithm goes here}
+
+MLTS is essentially DFS with log likelihood computations for each node, starting with 1-key subguesses. It keeps track of the best 6-key guess according to its LL. The initial goal is set to the LL of the 6-key guess suggested by the audio-only classifier. If the algorithm encounters a subguess whose LL is less than or equal to the maximum found so far, every subsequent guess starting with the subguess is rejected since we know that adding more subterms never causes the LL to rise.
+
 ### 5.8. Evaluation after Audio and Accelerometer Fusion
 
 ### 5.9. Evaluation on Additional Test Set
