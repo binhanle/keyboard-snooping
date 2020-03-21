@@ -346,6 +346,9 @@ However, intuitively we can give some insights into how the model interprets the
 
 Therefore, the chosen features in our preprocessing phase can represent the differences between the three tasks. Our audio input, after FFT, should have larger magnitudes for tasks that consist of continuous typing, i.e. gaming and emailing. While the accelerometer data should distinguish between tasks that have a relatively stable hand location (gaming) and those that require more hand movement due to the larger key space (messaging and emailing).
 
+![](./resources/Task3_results.png)
+
+*Training and validation accuracy/loss for task 3*
 
 <h2 id="evaluation">
 7. Evaluation
