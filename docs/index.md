@@ -159,7 +159,15 @@ We wrote a python program to used the built-in microphone of Macbook Pro to cont
 
 ### 4.1. Recording and Keylogging
 
-### 4.2. Machine Learning and Result
+### 4.2. Preprocessing
+
+To preprocess the audio, we first trim off 0.1 sec off both ends to remove any stray enter keys. Next, we set a magnitude threshold and enforce a minimum time between keystrokes to extract the push peaks and exclude the softer release peaks. Then, for each peak, we extract audio samples from 5 ms before the peak to 20 ms after the peak. For feature extraction, we apply FFT on 20 ms sliding windows with a stride of 1 ms. Finally, we standardize all of the features.
+
+### 4.3. Key Classifier Architecture
+
+### 4.4. Training Key Classifier
+
+### 4.5. Result
 
 <h2 id="task-2">
 5. Task 2: Identify 6-Digit PINs
