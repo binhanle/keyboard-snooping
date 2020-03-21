@@ -221,11 +221,9 @@ To preprocess the audio, we first trim off 0.1 sec off both ends to remove any s
 
 ### 4.3. Key Classifier Architecture
 
-### 4.4. Training Key Classifier
-
 Our key classifier is an MLP with two fully-connected hidden layers of size 64, a 50% dropout layer, and a softmax layer of size 36, which covers the keys `a-z` and `0-9`. The loss function for this model is categorical cross-entropy.
 
-### 4.5. Result
+### 4.5. Training and Result
 
 The dataset for this task consists of 4807 total keystrokes (a-z, 0-9) recorded by a single person on a MacBook using its internal microphones. We split the dataset into 70% training, 15% validation, and 15% test. We trained our key classifier on an GeForce RTX 2070 GPU for 100 epochs with a batch size of 128 and saved the model with the lowest validation loss. We obtained a keystroke accuracy ranging from **96%** and **98%**. If we train an averaging ensemble of 5 (initialized differently), the accuracy increases to **99%**. Our accuracy vastly exceeds the 79% attained in Keyboard Acoustic Emanations [1] since the authors used a window size of 2 ms instead of 20 ms, resulting in much smaller input features.
 
