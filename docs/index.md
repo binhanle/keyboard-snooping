@@ -220,6 +220,7 @@ Through [Task 1](#task-1), we could identity keys from audio data. However, we w
 Motion sensor data provide information of the movement of the user's (left) hand. So, we want to get the displacement information. There are multiple approaches.
 
 ![](./resources/device_frame.png)
+
 *Diagram showing the coordinate and rotation axes for the phone. ([source](https://developer.apple.com/documentation/coremotion/getting_processed_device-motion_data/understanding_reference_frames_and_device_attitude))*
 
 Most sensor data produced by the phone are 3-dimensional and in the device's frame. In order to get accelerometer data in the world's frame, we need to record both the linear accelerometer data and orientation data simultaneously, which, unfortunately, resulted in a low sampling rate.
@@ -283,18 +284,12 @@ How do we improve the PIN guess using the additional accelerometer information? 
 
 where:
 
-![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
-
-![K](https://render.githubusercontent.com/render/math?math=K) is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
-
-![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
-
-![c](https://render.githubusercontent.com/render/math?math=c) is the reliability constant of the displacement estimator
-
-![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
-
-![\hat{d_i}](https://render.githubusercontent.com/render/math?math=%5Chat%7Bd_i%7D) is the estimate of above
-
+- ![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![K](https://render.githubusercontent.com/render/math?math=K) is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
+- ![c](https://render.githubusercontent.com/render/math?math=c) is the reliability constant of the displacement estimator
+- ![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
+- ![\hat{d_i}](https://render.githubusercontent.com/render/math?math=%5Chat%7Bd_i%7D) is the estimate of above
 
 Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of ![10^6](https://render.githubusercontent.com/render/math?math=10%5E6) or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
 
