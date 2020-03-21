@@ -209,6 +209,12 @@ To collect motion sensor data, an Android app called â€œPhysical Toolbox Suiteâ€
 
 ### 4.1. Recording and Keylogging
 
+We wrote a python script that saves both key strokes as well as the audio information recorded with the built-in microphone. The script outputs two files, the audio waveform (.wav) and the keylog (.csv). The figure below shows the waveform of an audio file, where the initial large spike corresponds to the [SPACE] key we use as a synchronization label.
+
+![](./resources/waveform.png)
+
+*Waveform of a data sample.*
+
 ### 4.2. Preprocessing
 
 To preprocess the audio, we first trim off 0.1 sec off both ends to remove any stray enter keys. Next, we set a magnitude threshold and enforce a minimum time between keystrokes to extract the push peaks and exclude the softer release peaks. Then, for each peak, we extract audio samples from 5 ms before the peak to 20 ms after the peak. For feature extraction, we apply FFT on 20 ms sliding windows with a stride of 1 ms. Finally, we standardize all of the features.
@@ -287,7 +293,7 @@ For audio preprocessing, we apply the same steps as in Task 1. For accelerometer
 
 How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
 
-![$LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2$](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
+![$LL(G) =\sum_{i=1}^{\|G\|} \log(p(k_i = g_i)) - c \sum_{i=2}^{\|G\|} |d_i - \hat{d_i}|^2$](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
 
 where:
 
