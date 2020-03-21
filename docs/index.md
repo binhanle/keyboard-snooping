@@ -191,7 +191,13 @@ For [Task 3](#task-3), the dataset contains about 90 samples, each of which cont
 
 ### 3.3. Platforms
 
-We wrote a python program to used the built-in microphone of Macbook Pro to control the audio recording. To collect motion sensor data, an Android app called "Physical Toolbox Suite" meets all of our needs and we put an Android phone on our wrist to simulate a smartwatch. The platform we used for machine learning is Keras. 
+We wrote a python program to used the built-in microphone of Macbook Pro to control the audio recording. The location of the microphone is shown below.
+![](./resources/mbp_mike.png)
+*Diagram showing the location of the microphone on a Macbook Pro 2017. ([source](https://help.apple.com/macbookprothunderbolt3/late-2017/#/apd2182293a1))*
+
+To collect motion sensor data, an Android app called “Physical Toolbox Suite” meets all of our needs and we put an Android phone on our wrist to simulate a smartwatch, as shown below. The platform we used for machine learning is Keras.
+![](./resources/accel_position.png)
+*Collection of accelerometer data.*
 
 <h2 id="task-1">
 4. Task 1: Identify Single Keys
