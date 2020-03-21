@@ -167,6 +167,8 @@ To preprocess the audio, we first trim off 0.1 sec off both ends to remove any s
 
 ### 4.4. Training Key Classifier
 
+Our key classifier is an MLP with two fully-connected hidden layers of size 64, a 50% dropout layer, and a softmax layer of size 36, which covers the keys a-z and 0-9. The loss function for this model is categorical cross-entropy.
+
 ### 4.5. Result
 
 <h2 id="task-2">
@@ -236,9 +238,9 @@ How do we improve the PIN guess using the additional accelerometer information? 
 <img src="https://latex.codecogs.com/png.latex?\[&space;LL(G)&space;=&space;\sum_{i=1}^{|G|}&space;\log(p(k_i&space;=&space;g_i))&space;-&space;c&space;\sum_{i=2}^{|G|}&space;|d_i&space;-&space;\hat{d_i}|^2\&space;\]" title="\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\ \]" />
 
 where:
-- <img src="https://latex.codecogs.com/png.latex?G" title="G" /> is the PIN subguess with <img src="https://latex.codecogs.com/png.latex?g_{i}" title="g_{i}" /> as the <img src="https://latex.codecogs.com/png.latex?i" title="i" />th key
-- <img src="https://latex.codecogs.com/png.latex?K" title="K" /> is the true PIN with <img src="https://latex.codecogs.com/png.latex?k_{i}" title="k_{i}" /> as the <img src="https://latex.codecogs.com/png.latex?i" title="i" />th key
-- \\[ p \\] represents the softmax outputs of the key classifier on the \\[ g_i \\]'s
+- ![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- <img src="https://latex.codecogs.com/png.latex?K" title="K" /> is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
 - \\[ c \\] is the reliability constant of the displacement estimator
 - \\[ d_i \\] is the true displacement from \\[ g_{i - 1} \\] to \\[ g_i \\]
 - \\[ \hat{d_i} \\] is the estimate of above
