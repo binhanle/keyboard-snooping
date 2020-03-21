@@ -297,7 +297,7 @@ We recorded a new dataset consisting of keystroke audio and accelerator data fro
 
 How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
 
-![$LL(G) =\sum_{i=1}^{\|G\|} \log(p(k_i = g_i)) - c \sum_{i=2}^{\|G\|} |d_i - \hat{d_i}|^2$](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
+![equation](https://render.githubusercontent.com/render/math?math=%24LL(G)%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7B%7CG%7C%7D%20%5Clog(p(k_i%20%3D%20g_i))%20-%20c%20%5Csum_%7Bi%3D2%7D%5E%7B%7CG%7C%7D%20%7Cd_i%20-%20%5Chat%7Bd_i%7D%7C%5E2%24)
 
 where:
 
