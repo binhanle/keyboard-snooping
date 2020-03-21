@@ -382,7 +382,7 @@ Some possible future directions:
 | Name 		| Contributions 			|
 | ----------	| -----------------------	|
 | An Le 		| Survey of Prior Work, Machine Learning (Task 1 & 2), Maximum Likelihood Search Algorithm (Task 2)|
-| Eugene Chu 	| Dataset Generation (Task 1 & 2 & 3), Machine Learning (Task 3)|
+| Eugene Chu 	| Survey of Prior Work, Dataset Generation (Task 1 & 2 & 3), Machine Learning (Task 3)|
 | Zixuan Zhong | Explorations on Motion Sensors (Frame Conversion, Double Integration, and Sensor Selection), Dataset Generation (Task 1 & 2), and Dataset Synchronization (Task 1 & 2 & 3)|
 	
 
