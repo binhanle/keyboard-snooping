@@ -356,9 +356,13 @@ Therefore, the chosen features in our preprocessing phase can represent the diff
 
 ### 7.X. Success Metrics and Key Findings
 
-### 7.Y. Prior Work Examples and Relative Novelty
+### 7.2. Relative Novelty
 
-### 7.5. Strengths, Weakness, and Future Directions
+#### 7.2.2. Task 3
+
+From literature review, we see that most task classification with accelerometer data focuses on tasks that require large movement, i.e. they focus on tasks that have either full body movement (walking, swimming, ...), or those with swinging movements (tennis, wii, ...). In our work, we focus on keyboard snooping, which has minimal arm movement. Thus, accelerometer data by itself does not achieve good accuracy; we therefore complement our features with audio information for better results.
+
+### 7.3. Strengths, Weakness, and Future Directions
 
 The strengths of the project are:
 
