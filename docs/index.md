@@ -225,11 +225,11 @@ For audio preprocessing, we apply the same steps as in Task 1. For accelerometer
 
 How do we improve the PIN guess using the additional accelerometer information? We frame this as a maximum likelihood problem by interpreting the key classifier output as key probabilities and the displacement estimator as having a bivariate normal distribution with equal variances on both axes. Thus, the log likelihood (LL) expression to maximize is as follows:
 
-<img src="https://latex.codecogs.com/gif.latex?\[&space;LL(G)&space;=&space;\sum_{i=1}^{|G|}&space;\log(p(k_i&space;=&space;g_i))&space;-&space;c&space;\sum_{i=2}^{|G|}&space;|d_i&space;-&space;\hat{d_i}|^2\&space;\]" title="\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\ \]" />
+<img src="https://latex.codecogs.com/png.latex?\[&space;LL(G)&space;=&space;\sum_{i=1}^{|G|}&space;\log(p(k_i&space;=&space;g_i))&space;-&space;c&space;\sum_{i=2}^{|G|}&space;|d_i&space;-&space;\hat{d_i}|^2\&space;\]" title="\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\ \]" />
 
 where:
-- <img src="https://latex.codecogs.com/gif.latex?G" title="G" /> is the PIN subguess with <img src="https://latex.codecogs.com/gif.latex?g_{i}" title="g_{i}" /> as the <img src="https://latex.codecogs.com/gif.latex?i" title="i" />th key
-- \\[ K \\] is the true PIN with <img src="https://latex.codecogs.com/gif.latex?k_{i}" title="k_{i}" /> as the <img src="https://latex.codecogs.com/gif.latex?i" title="i" />th key
+- <img src="https://latex.codecogs.com/png.latex?G" title="G" /> is the PIN subguess with <img src="https://latex.codecogs.com/png.latex?g_{i}" title="g_{i}" /> as the <img src="https://latex.codecogs.com/png.latex?i" title="i" />th key
+- <img src="https://latex.codecogs.com/png.latex?K" title="K" /> is the true PIN with <img src="https://latex.codecogs.com/png.latex?k_{i}" title="k_{i}" /> as the <img src="https://latex.codecogs.com/png.latex?i" title="i" />th key
 - \\[ p \\] represents the softmax outputs of the key classifier on the \\[ g_i \\]'s
 - \\[ c \\] is the reliability constant of the displacement estimator
 - \\[ d_i \\] is the true displacement from \\[ g_{i - 1} \\] to \\[ g_i \\]
