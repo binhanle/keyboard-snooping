@@ -9,4 +9,4 @@
 | Zixuan Zhong		|
 
 - Website URL: https://binhanle.github.io/keyboard-snooping/
-- Slides (PDF): [docs/slides.pdf](https://github.com/binhanle/keyboard-snooping/blob/master/docs/slides.pdf)
+- Slides (PDF): [docs/slides.pdf](https://binhanle.github.io/keyboard-snooping/slides.pdf)
