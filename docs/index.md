@@ -243,7 +243,11 @@ MLTS is essentially DFS with log likelihood computations for each node, starting
 
 ### 5.8. Evaluation after Audio and Accelerometer Fusion
 
+We evaluate our new algorithm with ![c](https://render.githubusercontent.com/render/math?math=c) = 1 (we leave the optimization of ![c](https://render.githubusercontent.com/render/math?math=c) to future work). Using the dataset specified in section 5.6, the keystroke accuracy increases from **84.1%** to **91.8%** with MLTS. If we consider the problem of guessing the entire 6-key PIN in 5 attempts, the success rate is **83.3%**.
+
 ### 5.9. Evaluation on Additional Test Set
+
+Now we test both models and MLTS on a new dataset that was recorded by a third person on a third keyboard. Unsurprisingly, the keystroke accuracy is down to **13.6%**, barely better than random guessing (10%). Even after incorporating accelerometer data and MLTS, the accuracy remains at **13.6%**. However, the displacement estimator did not perform as badly, with an accuracy of **51.8%** and a loss of **0.420**, since hand movement was fairly consistent across all subjects. If we set ![c](https://render.githubusercontent.com/render/math?math=c) to 100, greatly prioritizing the displacement estimate, the accuracy improves to **33.3%**. This implies that the information gain from adding accelerometer data enables attackers to recover the PIN given a sufficient number of attempts.
 
 <h2 id="task-3">
 6. Task 3: Identify Typing Scenarios
