@@ -238,12 +238,14 @@ How do we improve the PIN guess using the additional accelerometer information? 
 <img src="https://latex.codecogs.com/png.latex?\[&space;LL(G)&space;=&space;\sum_{i=1}^{|G|}&space;\log(p(k_i&space;=&space;g_i))&space;-&space;c&space;\sum_{i=2}^{|G|}&space;|d_i&space;-&space;\hat{d_i}|^2\&space;\]" title="\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\ \]" />
 
 where:
+<p>
 - ![G](https://render.githubusercontent.com/render/math?math=G) is the PIN subguess with ![g_i](https://render.githubusercontent.com/render/math?math=g_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
-- <img src="https://latex.codecogs.com/png.latex?K" title="K" /> is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
+- ![K](https://render.githubusercontent.com/render/math?math=K) is the true PIN with ![k_i](https://render.githubusercontent.com/render/math?math=k_i) as the ![i](https://render.githubusercontent.com/render/math?math=i)th key
 - ![p](https://render.githubusercontent.com/render/math?math=p) represents the softmax outputs of the key classifier on the ![g_i](https://render.githubusercontent.com/render/math?math=g_i)'s
-- \\[ c \\] is the reliability constant of the displacement estimator
-- \\[ d_i \\] is the true displacement from \\[ g_{i - 1} \\] to \\[ g_i \\]
+- ![c](https://render.githubusercontent.com/render/math?math=c) is the reliability constant of the displacement estimator
+- ![d_i](https://render.githubusercontent.com/render/math?math=d_i) is the true displacement from ![g_{i-1}](https://render.githubusercontent.com/render/math?math=g_%7Bi-1%7D) to ![g_i](https://render.githubusercontent.com/render/math?math=g_i)
 - \\[ \hat{d_i} \\] is the estimate of above
+</p>
 
 Two critical observations are that partial sums can be computed from partial guesses, and each subterm is effectively negative. This allows us to prune unlikely subguesses and avoid searching the entire space of \\[ 10^6 \\] or 1 million key combinations. We present the Maximum Likelihood Tree Search algorithm (MLTS):
 
