@@ -81,7 +81,7 @@ The specific aims of this project include three tasks:
 - Typing style only affects accuracy slightly
 - PC more vulnerable than a notebook, but less than a phone and ATM pads
 
-### 2.2. Don't Skype & Type! Acoustic Eavesdropping in Voice-Over-IP <sup>[5]</sup>
+### 2.2. Don't Skype & Type! Acoustic Eavesdropping in Voice-Over-IP <sup>[2]</sup>
 
 #### 2.2.1. Objective
 
@@ -111,7 +111,7 @@ The specific aims of this project include three tasks:
 - Good performance with a voice to keystroke ratio < 0dB
 - ![10^7](https://render.githubusercontent.com/render/math?math=10%5E7) fewer tries needed to crack 10-letter password than brute force
    
-### 2.3. Activity classification using a single wrist-worn accelerometer  <sup>[8]</sup>
+### 2.3. Activity classification using a single wrist-worn accelerometer  <sup>[3]</sup>
 
 #### 2.3.1. Objective
 - This paper investigates the use of a single wrist- worn sensor to detect five daily activities.
@@ -132,7 +132,7 @@ The specific aims of this project include three tasks:
    - Although one wrist worn accelerometer can be used to identify activity of a user, only simple activities can be detected.
    - More complex activities or those that involve detailed hand movements may require other sensors for additional context. 
 
-### 2.4. A Comprehensive Study of Activity Recognition Using Accelerometers <sup>[9]</sup>
+### 2.4. A Comprehensive Study of Activity Recognition Using Accelerometers <sup>[4]</sup>
 
 #### 2.4.1. Objective
 
@@ -398,18 +398,8 @@ Some possible future directions:
 ## References
 [1] D. Asonov and R. Agrawal, “Keyboard acoustic emanations,” in IEEE Symposium on  Security and  Privacy,  2004.  Proceedings. 2004.    IEEE, 2004, pp. 3–11.
 
-[2] L.  Zhuang,  F.  Zhou,  and  J.  D.  Tygar,  “Keyboard acoustic emanations revisited,” ACM  Transactions on  Information and System Security (TISSEC), vol. 13, no. 1, pp. 1–26, 2009.
+[2] A.  Compagno,  M.  Conti,  D.  Lain,  and  G.  Tsudik,  “Don’t skype  &  type!  acoustic eavesdropping in voice-over-ip,”  in Proceedings of the 2017 ACM on Asia Conference on Computer and Communications Security, 2017, pp. 703–715.
 
-[3] P.  Marquardt,  A.  Verma,  H.  Carter,  and  P.  Traynor,  “(sp)iphone:  Decoding vibrations from nearby keyboards using mobile phone accelerometers,” in Proceedings of the 18th ACM conference on Computer and communications security,  2011, pp. 551–562.
+[3] S. Chernbumroong, A. S. Atkins and H. Yu, "Activity classification using a single wrist-worn accelerometer," 2011 5th International Conference on Software, Knowledge Information, Industrial Management and Applications (SKIMA) Proceedings, Benevento, 2011, pp. 1-6. doi: 10.1109/SKIMA.2011.6089975
 
-[4] J.  Liu,  Y.  Wang,  G.  Kar,  Y.  Chen,  J.  Yang,  and  M.  Gruteser, “Snooping keystrokes with mm-level audio ranging on a  single phone,”  in Proceedings of the  21st  Annual  International Conference on  Mobile  Computing and  Networking,  2015,  pp.142–154.
-
-[5] A.  Compagno,  M.  Conti,  D.  Lain,  and  G.  Tsudik,  “Don’t skype  &  type!  acoustic eavesdropping in voice-over-ip,”  in Proceedings of the 2017 ACM on Asia Conference on Computer and Communications Security, 2017, pp. 703–715.
-
-[6] K.  Jin,  S.  Fang,  C.  Peng,  Z.  Teng,  X.  Mao,  L.  Zhang,  and X.  Li,  “Vivisnoop:  Someone is snooping your typing without seeing it!” in 2017 IEEE Conference on Communications and Network Security (CNS).    IEEE, 2017, pp. 1–9.
-
-[7] T.  Giallanza,  T.  Siems,  E.  Smith,  E.  Gabrielsen,  I.  Johnson, M. A. Thornton, and E. C. Larson, “Keyboard snooping from mobile phone arrays with mixed convolutional and recurrent neural networks,” Proceedings of the  ACM  on  Interactive, Mobile, Wearable and Ubiquitous Technologies, vol. 3, no. 2, pp. 1–22, 2019.
-
-[8] S. Chernbumroong, A. S. Atkins and H. Yu, "Activity classification using a single wrist-worn accelerometer," 2011 5th International Conference on Software, Knowledge Information, Industrial Management and Applications (SKIMA) Proceedings, Benevento, 2011, pp. 1-6. doi: 10.1109/SKIMA.2011.6089975
-
-[9] Twomey, Niall & Diethe, Tom & Fafoutis, Xenofon & Elsts, Atis & McConville, Ryan & Flach, Peter & Craddock, I.J.. (2018). A Comprehensive Study of Activity Recognition using Accelerometers. 10.20944/preprints201803.0147.v1. 
+[4] Twomey, Niall & Diethe, Tom & Fafoutis, Xenofon & Elsts, Atis & McConville, Ryan & Flach, Peter & Craddock, I.J.. (2018). A Comprehensive Study of Activity Recognition using Accelerometers. 10.20944/preprints201803.0147.v1. 
