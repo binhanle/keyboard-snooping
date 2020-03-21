@@ -4,8 +4,6 @@ layout: default
 filename: index
 ---
 
-{% include mathjax.html %}
-
 # Keyboard Snooping from Audio and Motion Sensor Data
 
 *UCLA ECE 209AS Project, Winter 2020*
@@ -23,7 +21,7 @@ filename: index
 * [1. Introduction](#introduction)
 * [2. Literature Review](#literature-review)
 * [3. Technical Approaches](#technical-approaches)
-* [4. Task 1: Identify Single KeysTechnical Approaches](#task-1)
+* [4. Task 1: Identify Single Keys](#task-1)
 * [5. Task 2: Identify 6-Digit PINs](#task-2)
 * [6. Task 3: Identify Typing Scenarios](#task-3)
 * [7. Evaluation](#evaluation)
@@ -230,8 +228,8 @@ How do we improve the PIN guess using the additional accelerometer information? 
 \\[ LL(G) = \sum_{i=1}^{|G|} \log(p(k_i = g_i)) - c \sum_{i=2}^{|G|} |d_i - \hat{d_i}|^2\\ \\]
 
 where:
-- \\[ G \\] is the PIN subguess with \\[ g_i \\] as the \\[ i \\]th key
-- \\[ K \\] is the true PIN with \\[ k_i \\] as the \\[ i \\]th key
+- \\[ G \\] is the PIN subguess with \\[ g_i \\] as the <img src="https://latex.codecogs.com/gif.latex?\\[i\\]" title="\\[i\\]" />th key
+- \\[ K \\] is the true PIN with  <img src="https://latex.codecogs.com/gif.latex?\\[k_i\\]" title="\\[i\\]" />as the <img src="https://latex.codecogs.com/gif.latex?\\[i\\]" title="\\[i\\]" />th key
 - \\[ p \\] represents the softmax outputs of the key classifier on the \\[ g_i \\]'s
 - \\[ c \\] is the reliability constant of the displacement estimator
 - \\[ d_i \\] is the true displacement from \\[ g_{i - 1} \\] to \\[ g_i \\]
